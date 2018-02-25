@@ -1,30 +1,38 @@
 class Sorter {
   constructor() {
-    // your implementation
+    this.store = [];
+    this.comparator = (a, b) => a - b
   }
 
   add(element) {
-    // your implementation
+    this.store.push(element)
   }
 
   at(index) {
-    // your implementation
+    return this.store[index]
   }
 
   get length() {
-    // your implementation
+    return this.store.length
   }
 
   toArray() {
-    // your implementation
+    return this.store
   }
 
   sort(indices) {
-    // your implementation
+      const sorted_indices = indices.sort((a, b) => a - b);
+      const mergeArray = (sorted, i = 0) => {
+          this.store[sorted_indices[i]] = sorted[i];
+          return (i < sorted.length - 1)? mergeArray(sorted, i + 1): true
+      };
+      let sorted = sorted_indices.map((item) =>
+          this.store[item]).sort(this.comparator);
+      mergeArray(sorted);
   }
 
   setComparator(compareFunction) {
-    // your implementation
+    this.comparator = compareFunction
   }
 }
 

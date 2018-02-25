@@ -20,6 +20,7 @@ Implement class `Sorter` with next methods:
   console.log(sorter.length) // 2
   console.log(sorter.toArray()) // [1, 2]
 ```
+`at` - take index and return value of element in `Sorter` store 
 
 `sort` - takes indices of already added elements and sorts *only* these elements. For example:
 ```js

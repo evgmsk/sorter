@@ -1,4 +1,4 @@
-const assert = require('assert');
+ const assert = require('assert');
 Object.freeze(assert);
 const Sorter = require('./src/index.js');
 
@@ -406,7 +406,7 @@ describe('Sorter', () => {
         sorter.setComparator(REVERSE_COMPARATOR);
         sorter.sort([2, 3]);
 
-        sorter.setComparator(STRINGIFY_COMPARATOR)
+        sorter.setComparator(STRINGIFY_COMPARATOR);
         sorter.add('hello');
         sorter.add('hello world');
 
